@@ -2,7 +2,6 @@ package edu.utn.utnphones.controller.web;
 
 import edu.utn.utnphones.controller.CallController;
 import edu.utn.utnphones.domain.Call;
-import edu.utn.utnphones.exception.IllegalDurationException;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.xml.bind.ValidationException;
 import java.util.List;
 
 @RestController
@@ -34,7 +32,7 @@ public class CallsByProvinceAndDni {
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Successfully retrieved list"),
             @ApiResponse(code = 204, message = "No content"),
-            //@ApiResponse(code = 404, message = "The resource you were trying to reach is not found")
+            @ApiResponse(code = 400, message = "Bad request")
     }
     )
     public ResponseEntity<List<Call>> getCallsByProvinceDni(@RequestParam(value = "province") String province, @RequestParam(value = "parity") String parity) {
