@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/utn_phones_test?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+
+server:
+  port: 8080
+
+#http://localhost:8080/swagger-ui.html
