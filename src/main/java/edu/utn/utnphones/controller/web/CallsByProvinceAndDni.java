@@ -27,6 +27,7 @@ public class CallsByProvinceAndDni {
         this.callController = callController;
     }
 
+    
     @GetMapping(produces = "application/json")
     @ApiOperation(value = "Calls by province and dni even or odd", notes = "Return list of calls" )
     @ApiResponses(value = {
